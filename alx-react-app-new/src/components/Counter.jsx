@@ -4,7 +4,6 @@ function Counter() {
   // Initialize state for the count
   const [count, setCount] = useState(0);
 
-  
   return (
     <div style={{ textAlign: 'center', padding: '20px' }}>
       <h2>Counter</h2>
