@@ -9,7 +9,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Counter from './src/components'
 import ProfilePage from './ProfilePage';
-import UserContext from './UserContext';
+import UserContext from './components/UserContext';
 
 function App() {
   const [count, setCount] = useState(0)
