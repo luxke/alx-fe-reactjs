@@ -1,11 +1,3 @@
-import React from 'react';
-import { Routes, Route } from 'react-router-dom';
-import Home from '../Home';
-import About from '../About';
-import Services from '../Services';
-import Contact from '../Contact';
-import Navbar from '../Navbar';
-import Footer from './Footer';
 import Header from './components/Header';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
@@ -16,21 +8,18 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Counter from './src/components'
+import ProfilePage from './ProfilePage';
+import UserContext from './components/UserContext';
+
 function App() {
   const [count, setCount] = useState(0)
-
+  const userData = { name: "Jane Doe", email: "jane.doe@example.com" };
   return (
     <>
-       <div>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/services" element={<Services />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-      <Footer />
-    </div>
+<UserContext.Provider value={userData}>
+      <ProfilePage />
+    </UserContext.Provider>
+
       <h1>UserProfile</h1>
       <UserProfile name="Alice" age="25" bio="Loves hiking and photography"/>
       <Header />
