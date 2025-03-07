@@ -2,12 +2,14 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import { useState } from "react";
 
-const Home = () => <div style={styles.page}><h1>Welcome to Our Company</h1></div>;
+const Home = () => <div style={styles.page}><h1>Welcome to Our Company</h1>
+<p>We are dedicated to delivering excellence in all our services.</p>
+</div>;
 
 const About = () => (
   <div style={styles.page}>
     <h1>About Us</h1>
-    <p>We are a company dedicated to providing quality services to our customers.</p>
+    <p>Our company has been providing top-notch services since 1990. We specialize in various fields including technology, marketing, and consultancy.</p>
   </div>
 );
 
@@ -15,9 +17,9 @@ const Services = () => (
   <div style={styles.page}>
     <h1>Our Services</h1>
     <ul>
-      <li>Custom Bead Art</li>
-      <li>Bangle and Anklets Design</li>
-      <li>Handmade and Machinery  Accessories</li>
+      <li>Technology Consulting</li>
+      <li>Market Analysis</li>
+      <li>Product Development</li>
     </ul>
   </div>
 );
@@ -98,7 +100,9 @@ const styles = {
 
 function App() {
   return (
+    
     <Router>
+      <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
