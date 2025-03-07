@@ -15,13 +15,18 @@ const styles = {
   navbar: {
     backgroundColor: "#333",
     padding: "10px",
-    textAlign: "center",
+    display: "flex",       
+    justifyContent: "center", 
+    alignItems: "center",    
+    gap: "20px"             
   },
   link: {
     color: "white",
     textDecoration: "none",
-    margin: "0 15px",
     fontSize: "18px",
+    padding: "8px 16px",
+    borderRadius: "5px",
+    transition: "background 0.3s",
   }
 };
 
