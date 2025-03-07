@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./Navbar";
+import Navbar from "./components/Navbar";
 import { useState } from "react";
 
 const Home = () => <div style={styles.page}><h1>Welcome to Our Company</h1></div>;
