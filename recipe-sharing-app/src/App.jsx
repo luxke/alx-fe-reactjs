@@ -6,6 +6,7 @@ import './App.css'
 import RecipeList from './RecipeList.jsx'
 import AddRecipeForm from './AddRecipeForm.jsx'
 import EditRecipeForm from './EditRecipeForm.jsx'
+import SearchBar from './SearchBar.jsx'
 function App() {
   const [count, setCount] = useState(0)
 
@@ -13,6 +14,7 @@ function App() {
     <>
     <RecipeList/>
     <AddRecipeForm/>
+    <SearchBar />
     <Router>
       <Routes>
         <Route path="/" element={<RecipeList />} />
