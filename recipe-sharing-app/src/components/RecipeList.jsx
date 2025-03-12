@@ -11,7 +11,7 @@ import { useRecipeStore } from './recipeStore';
       ) : (
         <ul>
           {filteredRecipes.map(recipe => (
-            <li key={recipe.id}>{recipe.title}</li>
+            <li key={recipe.id}><Link to={`/recipe/${recipe.id}`}>{recipe.title}</Link> </li>
           ))}
         </ul>
       )}
