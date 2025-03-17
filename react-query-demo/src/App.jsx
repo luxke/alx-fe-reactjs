@@ -2,7 +2,7 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import { queryClient, queryClientProvider } from '@tanstack/react-query';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import PostsComponent from './components/PostsComponent';
 
 function App() {
@@ -10,9 +10,9 @@ function App() {
 
   return (
     <>
-    <queryClientProvider client={queryClient}>
+    <QueryClientProvider client={QueryClient}>
       <PostsComponent />
-    </queryClientProvider>
+    </QueryClientProvider>
 
       <div>
         <a href="https://vite.dev" target="_blank">
