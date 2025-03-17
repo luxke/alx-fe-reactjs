@@ -5,6 +5,8 @@ import './App.css'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import PostsComponent from './components/PostsComponent';
 
+const QueryClient = new QueryClient();
+
 function App() {
   const [count, setCount] = useState(0)
 
