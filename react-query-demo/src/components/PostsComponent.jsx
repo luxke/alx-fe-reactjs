@@ -16,6 +16,7 @@ function PostsComponent() {
     staleTime: 5000, 
     cacheTime: 10000, 
     refetchOnWindowFocus: false, 
+    keepPreviousData: true, 
   });
 
   if (isLoading) return <p>Loading posts...</p>;
