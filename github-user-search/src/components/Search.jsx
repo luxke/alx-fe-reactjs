@@ -28,7 +28,9 @@ const Search = () => {
   return (
     <div className="max-w-lg mx-auto p-4">
       <h1 className="text-2xl font-bold text-center mb-4">GitHub User Search</h1>
-      <SearchBar onSearch={handleSearch} />
+
+      <SearchBar onSearch={handleSearch} />  
+
       {loading && <Loader />}
       {error && <ErrorMessage message={error} />}
       {user && <UserCard user={user} />}
