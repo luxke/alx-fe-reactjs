@@ -1,57 +1,29 @@
 import { useState } from "react";
-import { fetchUserData } from "../services/githubService";
 
-const SearchBar = () => {
+const SearchBar = ({ onSearch }) => {
   const [username, setUsername] = useState("");
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    if (!username.trim()) return;
-
-    setLoading(true);
-    setError("");
-    setUser(null);
-
-    const data = await fetchUserData(username.trim());
-
-    if (data) {
-      setUser(data);
-    } else {
-      setError("Looks like we can't find the user");
+    if (username.trim()) {
+      onSearch(username);
+      setUsername("");
     }
-
-    setLoading(false);
   };
 
   return (
-    <div>
-  
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          placeholder="Enter GitHub username..."
-        />
-        <button type="submit">Search</button>
-      </form>
-
-      {loading && <p>Loading...</p>}
-      {error && <p>{error}</p>}
-      {user && (
-        <div>
-          <img src={user.avatar_url} alt={user.login} width="100" />
-          <h2>{user.name || user.login}</h2>
-          <p>@{user.login}</p>
-          <a href={user.html_url} target="_blank" rel="noreferrer">
-            View GitHub Profile
-          </a>
-        </div>
-      )}
-    </div>
+    <form onSubmit={handleSubmit} className="flex gap-2 p-4">
+      <input
+        type="text"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+        placeholder="Enter GitHub username..."
+        className="border p-2 rounded w-full"
+      />
+      <button type="submit" className="bg-blue-500 text-white px-4 py-2 rounded">
+        Search
+      </button>
+    </form>
   );
 };
 
