@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { fetchGitHubUser } from "../services/githubService";
+import { fetchUserData } from "../services/githubService";
 import UserCard from "./UserCard";
 import ErrorMessage from "./ErrorMessage";
 import Loader from "./Loader";
@@ -18,7 +18,7 @@ const Search = () => {
     setError("");
     setUser(null);
 
-    const userData = await fetchGitHubUser(username);
+    const userData = await fetchUserData(username);
     setLoading(false);
 
     if (!userData) {
