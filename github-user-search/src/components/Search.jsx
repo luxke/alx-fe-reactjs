@@ -22,7 +22,7 @@ const Search = () => {
     setLoading(false);
 
     if (!userData) {
-      setError("Looks like we can't find the user.");
+      setError("Looks like we can't find the user");
     } else {
       setUser(userData);
     }
