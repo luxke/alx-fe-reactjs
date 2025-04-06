@@ -46,8 +46,27 @@ const Search = () => {
       </form>
 
       {loading && <Loader />}
-      {error && <ErrorMessage message={error} />}
-      {user && <UserCard user={user} />}
+      {error && <ErrorMessage message={error} />} 
+      {user && <UserCard user={user} />} 
+
+      {user && (
+        <div className="border p-4 rounded text-center">
+          <img
+            src={user.avatar_url}
+            alt={user.login}
+            className="w-24 h-24 mx-auto rounded-full mb-2"
+          />
+          <h2 className="text-lg font-semibold">{user.login}</h2>
+          <a
+            href={user.html_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-600 underline"
+          >
+            View Profile
+          </a>
+        </div>
+      )}
     </div>
   );
 };
